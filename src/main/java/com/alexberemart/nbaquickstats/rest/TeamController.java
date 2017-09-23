@@ -25,7 +25,12 @@ public class TeamController {
     private TeamRepository teamRepository;
 
     @RequestMapping(path = "/people", method = RequestMethod.GET)
-    public ResponseEntity<List<Team>> list() {
+    public ResponseEntity<Iterable<Team>> list() {
         return ResponseEntity.ok().body(teamRepository.findAll());
+    }
+
+    @RequestMapping(path = "/people", method = RequestMethod.POST)
+    public ResponseEntity<Team> create(@RequestBody Team customerByTownFields) {
+        return ResponseEntity.ok().body(teamRepository.save(customerByTownFields));
     }
 }
