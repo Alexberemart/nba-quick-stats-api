@@ -1,0 +1,16 @@
+quotecenterssff:
+  hibernate:
+    hbm2ddl.auto: create
+    dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    classname: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/heroku_4b0171329a915c8?autoReconnect=true
+    db:
+      username: b862b14e5a2cd6
+      password: 39d2f357
+    schema:
+    validation:
+      query: select 1
+    show:
+      sql: false
