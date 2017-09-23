@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+quotecenterssff:
+  hibernate:
+    hbm2ddl.auto: create
+    dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    classname: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/nbaquickstats?autoReconnect=true
+    db:
+      username: root
+      password: root001
+    schema:
+    validation:
+      query: select 1
+    show:
+      sql: false
