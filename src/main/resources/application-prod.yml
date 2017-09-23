@@ -5,7 +5,7 @@ quotecenterssff:
   datasource:
     classname: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
     driver: com.mysql.jdbc.Driver
-    url: jdbc:mysql://b862b14e5a2cd6:39d2f357@eu-cdbr-west-01.cleardb.com/heroku_4b0171329a915c8?reconnect=true
+    url: jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_4b0171329a915c8?reconnect=true
     db:
       username: b862b14e5a2cd6
       password: 39d2f357
