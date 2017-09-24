@@ -42,7 +42,7 @@ public class PlayerByTeamController {
         return ResponseEntity.ok().body(playerByTeamRepository.save(customerByTownFields));
     }
 
-    @RequestMapping(path = "/playerByTeam",
+    @RequestMapping(path = "/playerByTeam/{id}",
             method = RequestMethod.DELETE)
     public ResponseEntity<PlayerByTeam> delete(@PathVariable String id) {
         playerByTeamRepository.delete(id);
