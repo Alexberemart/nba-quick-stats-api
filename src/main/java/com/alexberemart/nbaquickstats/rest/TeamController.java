@@ -22,7 +22,7 @@ public class TeamController {
     private TeamRepository teamRepository;
 
     @CrossOrigin(origins = {"http://localhost:4200",
-            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
+            "https://nba-quick-stats.herokuapp.com"})
     @RequestMapping(path = "/team", method = RequestMethod.GET)
     public ResponseEntity<Iterable<Team>> list() {
         return ResponseEntity.ok().body(teamRepository.findAll());

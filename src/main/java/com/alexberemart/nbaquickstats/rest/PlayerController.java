@@ -24,7 +24,7 @@ public class PlayerController {
     private PlayerRepository playerRepository;
 
     @CrossOrigin(origins = {"http://localhost:4200",
-            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
+            "https://nba-quick-stats.herokuapp.com"})
     @RequestMapping(path = "/player", method = RequestMethod.GET)
     public ResponseEntity<Iterable<Player>> list() {
         return ResponseEntity.ok().body(playerRepository.findAll());

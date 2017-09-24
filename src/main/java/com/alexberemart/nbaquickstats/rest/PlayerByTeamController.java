@@ -20,7 +20,7 @@ public class PlayerByTeamController {
     private PlayerByTeamRepository playerByTeamRepository;
 
     @CrossOrigin(origins = {"http://localhost:4200",
-            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
+            "https://nba-quick-stats.herokuapp.com"})
     @RequestMapping(path = "/playerByTeam",
             method = RequestMethod.GET)
     public ResponseEntity<Iterable<PlayerByTeam>> list() {
@@ -28,7 +28,7 @@ public class PlayerByTeamController {
     }
 
     @CrossOrigin(origins = {"http://localhost:4200",
-            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
+            "https://nba-quick-stats.herokuapp.com"})
     @RequestMapping(path = "/playerByTeamByTeam",
             method = RequestMethod.GET)
     public ResponseEntity<List<PlayerByTeam>> listByTeam(@RequestParam("teamID") String teamId) {
