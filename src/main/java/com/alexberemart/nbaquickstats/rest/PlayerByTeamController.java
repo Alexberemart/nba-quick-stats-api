@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -32,8 +33,9 @@ public class PlayerByTeamController {
             "https://nba-quick-stats.herokuapp.com"})
     @RequestMapping(path = "/playerByTeamByTeam",
             method = RequestMethod.GET)
-    public ResponseEntity<List<PlayerByTeam>> listByTeam(@RequestParam("teamID") String teamId) {
-        return ResponseEntity.ok().body(playerByTeamRepository.findByTeamCode(teamId));
+    public ResponseEntity<List<PlayerByTeam>> listByTeam(@RequestParam("teamID") String teamId,
+                                                         @RequestParam("seasonCode") String seasonCode) {
+        return ResponseEntity.ok().body(playerByTeamRepository.findByTeamCodeAndSeasonCode(teamId, seasonCode));
     }
 
     @RequestMapping(path = "/playerByTeam",

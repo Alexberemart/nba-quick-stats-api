@@ -12,5 +12,5 @@ import java.util.List;
 
 @Repository
 public interface PlayerByTeamRepository extends JpaRepository<PlayerByTeam, String> {
-    List<PlayerByTeam> findByTeamCode(String code);
+    List<PlayerByTeam> findByTeamCodeAndSeasonCode(String code, String seasonCode);
 }

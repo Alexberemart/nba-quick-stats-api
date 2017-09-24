@@ -27,14 +27,13 @@ public class PlayerByTeam {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "player_id", nullable = false)
-//    @JsonIgnore
     private Player player;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "team_id", nullable = false)
-//    @JsonIgnore
     private Team team;
 
-    private Date fromDate;
-    private Date toDate;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "season_id", nullable = false)
+    private Season season;
 }
