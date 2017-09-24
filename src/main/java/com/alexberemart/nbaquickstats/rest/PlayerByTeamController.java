@@ -19,14 +19,16 @@ public class PlayerByTeamController {
 
     private PlayerByTeamRepository playerByTeamRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = {"http://localhost:4200",
+            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
     @RequestMapping(path = "/playerByTeam",
             method = RequestMethod.GET)
     public ResponseEntity<Iterable<PlayerByTeam>> list() {
         return ResponseEntity.ok().body(playerByTeamRepository.findAll());
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = {"http://localhost:4200",
+            "https://nba-quick-stats-api.herokuapp.com/playerByTeam"})
     @RequestMapping(path = "/playerByTeamByTeam",
             method = RequestMethod.GET)
     public ResponseEntity<List<PlayerByTeam>> listByTeam(@RequestParam("teamID") String teamId) {
