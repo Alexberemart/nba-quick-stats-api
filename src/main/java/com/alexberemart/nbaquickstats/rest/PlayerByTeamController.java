@@ -5,6 +5,7 @@ import com.alexberemart.nbaquickstats.repository.PlayerByTeamRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,5 +40,12 @@ public class PlayerByTeamController {
             method = RequestMethod.POST)
     public ResponseEntity<PlayerByTeam> create(@RequestBody PlayerByTeam customerByTownFields) {
         return ResponseEntity.ok().body(playerByTeamRepository.save(customerByTownFields));
+    }
+
+    @RequestMapping(path = "/playerByTeam",
+            method = RequestMethod.DELETE)
+    public ResponseEntity<PlayerByTeam> delete(@PathVariable String id) {
+        playerByTeamRepository.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

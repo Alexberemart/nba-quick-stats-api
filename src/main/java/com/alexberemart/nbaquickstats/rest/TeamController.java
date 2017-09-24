@@ -1,10 +1,12 @@
 package com.alexberemart.nbaquickstats.rest;
 
+import com.alexberemart.nbaquickstats.model.PlayerByTeam;
 import com.alexberemart.nbaquickstats.model.Team;
 import com.alexberemart.nbaquickstats.repository.TeamRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,5 +33,12 @@ public class TeamController {
     @RequestMapping(path = "/team", method = RequestMethod.POST)
     public ResponseEntity<Team> create(@RequestBody Team customerByTownFields) {
         return ResponseEntity.ok().body(teamRepository.save(customerByTownFields));
+    }
+
+    @RequestMapping(path = "/team",
+            method = RequestMethod.DELETE)
+    public ResponseEntity<PlayerByTeam> delete(@PathVariable String id) {
+        teamRepository.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
